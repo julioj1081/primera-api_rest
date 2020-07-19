@@ -1,0 +1,43 @@
+podemos iniciar lo en la consola con 
+node index.js
+
+para ingresar nuevos productos los hacemos desde 
+postman y por medio de post lo agregamos
+
+POST        http://localhost:3000/api/product            
+Pestaña 
+        HEADER 
+****************************************************************        
+            KEY             VALUE
+            Content-type    application/json
+            Authentication  Bearer <._id del token logeado> 
+****************************************************************
+Pestaña 
+        BODY
+****************************************************************    
+    "name": "pulseras",
+    "picture": "pulsera.png",
+    "category": "accesories",
+    "description": "prueba de post",
+
+para visualizar todos los articulos usamos
+el get 
+pero antes debemos estar logeados
+http://localhost:3000/api/product
+
+----------------------------------------------------------------
+PARA VE COMO FUNCIONA LA API podemos ir a la 
+carpeta de routers index.js
+encontraremos varias funciones los cuales son
+el subir, modificar, y borrar un dato.
+
+
+//uso mi login
+http://localhost:3000/login
+username: julioj1081@hotmail.com
+password: 123
+y despues como ya esta logeado podemos ingresar a la vista de los 
+productos en caso de no estar logeados nos saldra un mensaje
+de que necesitamos estar logeados para que nos muestre las vistas
+
+http://localhost:3000/api/product

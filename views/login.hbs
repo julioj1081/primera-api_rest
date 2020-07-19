@@ -1,0 +1,25 @@
+<form id="login" method="POST">
+    <input type="email" name="email" placeholder="Ingresa email">
+    <br><br>
+    <input type="password" name="password" placeholder="Ingresa contraseña">
+    <br><br>
+    <input type="submit" value="Login">
+</form>
+
+<script>
+        const formlogin = document.querySelector("#login");
+        const formdata = new FormData(formlogin);
+        formlogin.addEventListener('submit', event =>{
+            event.preventDefault();
+            fetch('/api/singIn', {
+                method: 'POST',
+                body: formdata
+            })
+            .then(res => res.json())
+            .then(data => {
+                 localStorage.setItem('token', data.token)
+            } 
+                //console.log(data)
+            )
+        })
+</script>
